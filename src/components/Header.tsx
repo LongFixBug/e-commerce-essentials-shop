@@ -9,7 +9,7 @@ const Header = () => {
   const [wishlistCount] = useState(5);
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-background shadow-lg sticky top-0 z-50">
       {/* Top Banner */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-2 text-sm">
         Miễn phí vận chuyển cho đơn hàng trên 500.000đ ⚡

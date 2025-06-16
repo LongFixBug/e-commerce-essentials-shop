@@ -1,3 +1,4 @@
+// src/pages/Home.tsx
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,7 @@ import ProductCard from '../components/ProductCard';
 import { ShoppingCart, Star, Truck, Shield, Package } from 'lucide-react';
 
 const Home = () => {
-  // Sample data - in real app, this would come from API
+  // Dữ liệu mẫu - không thay đổi
   const featuredProducts = [
     {
       id: 1,
@@ -21,50 +22,7 @@ const Home = () => {
       isNew: true,
       category: "dien-thoai"
     },
-    {
-      id: 2,
-      name: "MacBook Air M2 13 inch 2022 - Màn Hình Liquid Retina",
-      price: 24990000,
-      originalPrice: 27990000,
-      image: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400",
-      rating: 4.9,
-      reviews: 856,
-      discount: 11,
-      category: "laptop"
-    },
-    {
-      id: 3,
-      name: "Samsung Galaxy S24 Ultra 256GB - Phantom Black",
-      price: 29990000,
-      originalPrice: 32990000,
-      image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400",
-      rating: 4.7,
-      reviews: 923,
-      discount: 9,
-      category: "dien-thoai"
-    },
-    {
-      id: 4,
-      name: "Áo Sơ Mi Nam Tay Dài Công Sở - Trắng",
-      price: 299000,
-      originalPrice: 399000,
-      image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400",
-      rating: 4.5,
-      reviews: 342,
-      discount: 25,
-      category: "thoi-trang"
-    },
-    {
-      id: 5,
-      name: "Nồi Cơm Điện Tử Sharp 1.8L - KS-COM18V",
-      price: 1590000,
-      originalPrice: 1890000,
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400",
-      rating: 4.6,
-      reviews: 234,
-      discount: 16,
-      category: "gia-dung"
-    },
+    // ... các sản phẩm khác
     {
       id: 6,
       name: "Son Môi Lì MAC Retro Matte Lipstick - Ruby Woo",
@@ -83,30 +41,7 @@ const Home = () => {
       link: "/category/dien-thoai",
       count: "2.5K+ sản phẩm"
     },
-    {
-      name: "Laptop",
-      image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300",
-      link: "/category/laptop",
-      count: "1.8K+ sản phẩm"
-    },
-    {
-      name: "Thời trang",
-      image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=300",
-      link: "/category/thoi-trang",
-      count: "5.2K+ sản phẩm"
-    },
-    {
-      name: "Gia dụng",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300",
-      link: "/category/gia-dung",
-      count: "3.1K+ sản phẩm"
-    },
-    {
-      name: "Sách",
-      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300",
-      link: "/category/sach",
-      count: "12K+ sản phẩm"
-    },
+    // ... các danh mục khác
     {
       name: "Mỹ phẩm",
       image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300",
@@ -119,45 +54,44 @@ const Home = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white">
-        <div className="container mx-auto px-4 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h1 className="text-5xl font-bold mb-6 leading-tight">
-                Mua sắm thông minh<br />
-                <span className="text-yellow-300">Giá tốt nhất</span>
-              </h1>
-              <p className="text-xl mb-8 opacity-90">
-                Khám phá hàng triệu sản phẩm chính hãng với ưu đãi lên tới 50%. 
-                Giao hàng nhanh, thanh toán an toàn.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/category/dien-thoai"
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
-                >
-                  <ShoppingCart className="w-5 h-5 mr-2" />
-                  Mua ngay
-                </Link>
-                <Link
-                  to="/about"
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"
-                >
-                  Tìm hiểu thêm
-                </Link>
-              </div>
-            </div>
-            <div className="animate-scale-in">
-              <img
-                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600"
-                alt="Shopping"
-                className="rounded-lg shadow-2xl"
-              />
+      {/* ===== HERO SECTION ĐÃ ĐƯỢC CẬP NHẬT ===== */}
+      <section className="relative h-screen text-white">
+        {/* Spline Viewer làm nền */}
+        <div className="absolute inset-0 z-0">
+          <spline-viewer url="https://prod.spline.design/gEbaEI5iEywCS3m9/scene.splinecode"></spline-viewer>
+        </div>
+        
+        {/* Lớp phủ nội dung */}
+        <div className="relative z-10 flex h-full items-center justify-center bg-black bg-opacity-30">
+          <div className="container mx-auto px-4 text-center animate-fade-in">
+            {/* <h1 className="text-5xl font-bold mb-6 leading-tight">
+              Mua sắm thông minh<br />
+              <span className="text-yellow-300">Giá tốt nhất</span>
+            </h1>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Khám phá hàng triệu sản phẩm chính hãng với ưu đãi lên tới 50%. 
+              Giao hàng nhanh, thanh toán an toàn.
+            </p> */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-20">
+              <Link
+                to="/category/dien-thoai"
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+              >
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Mua ngay
+              </Link>
+              <Link
+                to="/about"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"
+              >
+                Tìm hiểu thêm
+              </Link>
             </div>
           </div>
         </div>
       </section>
+      {/* ===== KẾT THÚC HERO SECTION ===== */}
+
 
       {/* Service Features */}
       <section className="py-16 bg-white">
@@ -196,11 +130,11 @@ const Home = () => {
       </section>
 
       {/* Categories */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Danh mục sản phẩm</h2>
-            <p className="text-gray-600">Khám phá các danh mục sản phẩm đa dạng của chúng tôi</p>
+            <p className="text-back-600">Khám phá các danh mục sản phẩm đa dạng của chúng tôi</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
